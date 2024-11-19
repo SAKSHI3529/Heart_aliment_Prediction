@@ -1,4 +1,8 @@
-Flask
+Flask~=3.1.0
 Flask-PyMongo
 gunicorn
-numpy
+numpy~=2.1.3
+
+joblib~=1.4.2
+python-dotenv~=1.0.1
+scikit-learn~=1.5.2

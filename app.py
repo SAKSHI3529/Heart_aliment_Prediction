@@ -5,12 +5,9 @@ from flask_pymongo import PyMongo
 import numpy as np
 import os
 from dotenv import load_dotenv
-from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier
 
 from pyexpat import model
-
-
-
 
 load_dotenv() 
 password_pred = os.getenv("passwor_pred")
@@ -58,8 +55,9 @@ def prediction():
     arr = np.array([[data14, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13]])
     model = DecisionTreeClassifier()
     joblib.dump(model, 'heartweb.pkl')
-    # model = joblib.load('heartweb.pkl')
+    model = joblib.load('heartweb.pkl')
     # predictions = model.predict(arr)
+    # print(predictions)
     mongo = PyMongo()
     app.config["MONGO_URI"] = "mongodb://localhost:27017/Heart-ailment"
     mongo.init_app(app)
@@ -96,7 +94,8 @@ def prediction():
     # db[Name].insert_one({"Slope":data11})
     # db[Name].insert_one({"ca":data12})
     # db[Name].insert_one({"thal":data13})
-
+    # result = prediction()  # Call the prediction function to get its result
+    # print(result)
     return render_template('after.html', data=prediction)
 
 @app.route("/prevention")
