@@ -3,29 +3,55 @@
 
    
          <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-      <div class="container py-5">
-          <div class="row justify-content-start">
-              <div class="col-lg-8 text-center text-lg-start">
-                  <!-- <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To HA</h5> -->
-                  <h1 class="display-1 text-white mb-md-4" style="color: #13C5DD ;">Heart Disease<br> Prediction System</h1>
-                  <div class="pt-2">
-                      <!-- <a href="" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Doctor</a> -->
-                      <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2 bg-primary">Go For Prediction</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+{#    <div class="container-fluid bg-primary py-5 mb-5 hero-header">#}
+{#      <div class="container py-5">#}
+{#          <div class="row justify-content-start">#}
+{#              <div class="col-lg-8 text-center text-lg-start">#}
+{#                  <!-- <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To HA</h5> -->#}
+{#                  <h1 class="display-1 text-white mb-md-4" style="color: #13C5DD ;">Heart Disease<br> Prediction System</h1>#}
+{#                  <div class="pt-2">#}
+{#                      <!-- <a href="" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Doctor</a> -->#}
+{#                      <a href="/prediction" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2 bg-primary">Go For Prediction</a>#}
+{#                  </div>#}
+{#                  <div class="pt-2">#}
+{#                        <a href="/prediction" class="btn bg-primary rounded-pill py-md-3 px-md-5 mx-2">Go For Prediction</a>#}
+{#                    </div>#}
+{##}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#  </div>#}
+
+    <!-- Hero Section -->
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h1 class="display-3 fw-bold text-white mb-4">
+                    Heart Disease<br>Prediction System
+                </h1>
+                <p class="text-black-50 fs-5 mb-4">
+                    Empowering early detection of heart diseases with 89% accuracy,
+                    using advanced machine learning technology. Take control of your health today!
+                </p>
+                <a href="/prediction" class="btn bg-primary rounded-pill py-md-3 px-md-5 mx-2">Go For Prediction</a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <img src="static/img/logo.png" alt="Heart Health" class="img-fluid rounded-circle " style="width: 110%; height: 50%;">
+            </div>
+        </div>
+    </div>
+</div>
+
   <!-- Hero End -->
 
   <!-- About Start -->
-  <div class="container-fluid py-5">
+{#  <div class="container-fluid py-5">#}
     <div class="container">
         <div class="row gx-5">
             <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded" src="static/img/about-img2.jpg" style="width: 100;height: 120px;">
+                    <img class="position-absolute w-100 h-100 rounded" src="static/img/about-page.png" style="width: 100;height: 120px;">
                 </div>
             </div>
             <div class="col-lg-7">
@@ -33,37 +59,37 @@
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
                     <h1 class="display-4">Best Heart Prediction System For Yourself and Your Family</h1>
                 </div>
-                <p>Heart disease is the leading cause of death in India. The term “heart disease” refers to several types of heart conditions. An estimated <mark>17.9 million</mark> people died from Cardiovascular diseases in 2016, representing <mark>31% of all global deaths</mark>. We can greatly reduce risk for heart disease through lifestyle changes.</p>
-                <div class="row g-3 pt-3">
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
-                            <h6 class="mb-0">Doctor<small class="d-block text-primary">Advice</small></h6>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
-                            <h6 class="mb-0">Prescribe<small class="d-block text-primary">Medicine</small></h6>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
-                            <h6 class="mb-0">Accurate<small class="d-block text-primary">Result</small></h6>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-6">
-                        <div class="bg-light text-center rounded-circle py-4">
-                            <!-- <i class="fa fa-3x fa-ambulance text-primary mb-3"></i> -->
-                            <h6 class="mb-0">Free<small class="d-block text-primary">Access</small></h6>
-                        </div>
-                    </div>
-                </div>
+                <p>At <b>BeHeartSure</b>, we are driven by a singular purpose: empowering individuals with the tools to take charge of their heart health. Heart disease remains one of the leading causes of illness worldwide, and early detection can significantly improve outcomes. Our system is designed to provide users with earlier predictions, fostering awareness and enabling timely action.</p>
+{#                <div class="row g-3 pt-3">#}
+{#                    <div class="col-sm-3 col-6">#}
+{#                        <div class="bg-light text-center rounded-circle py-4">#}
+{#                            <i class="fa fa-3x fa-user-md text-primary mb-3"></i>#}
+{#                            <h6 class="mb-0">Doctor<small class="d-block text-primary">Advice</small></h6>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-3 col-6">#}
+{#                        <div class="bg-light text-center rounded-circle py-4">#}
+{#                            <i class="fa fa-3x fa-procedures text-primary mb-3"></i>#}
+{#                            <h6 class="mb-0">Prescribe<small class="d-block text-primary">Medicine</small></h6>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-3 col-6">#}
+{#                        <div class="bg-light text-center rounded-circle py-4">#}
+{#                            <i class="fa fa-3x fa-microscope text-primary mb-3"></i>#}
+{#                            <h6 class="mb-0">Accurate<small class="d-block text-primary">Result</small></h6>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-3 col-6">#}
+{#                        <div class="bg-light text-center rounded-circle py-4">#}
+{#                            <!-- <i class="fa fa-3x fa-ambulance text-primary mb-3"></i> -->#}
+{#                            <h6 class="mb-0">Free<small class="d-block text-primary">Access</small></h6>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
             </div>
         </div>
     </div>
-</div>
+{#</div>#}
 <!-- About End -->
 <!-- <div class="container">
   <div class="container mt-4 ">
@@ -113,92 +139,138 @@
    </div>
  </div> -->
 <!-- Services Start -->
-<div class="container-fluid py-5">
-  <div class="container">
-      <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-          <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h4>
-          
-      </div>
-      <div class="row g-5">
-          <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <!-- <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-user-md text-white"></i>
-                  </div> -->
-                  <img src="{{url_for('static', filename='3.jpg')}}" class="card-img">
-                  <h4 class="mb-3">About Heart disease</h4>
-                  <h6 class="m-0">Learn about heart disease and its related conditions</h6>
-                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a> -->
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <!-- <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-procedures text-white"></i>
-                  </div> -->
+{#<div class="container-fluid py-5">#}
+{#  <div class="container">#}
+{#      <div class="text-center mx-auto mb-5" style="max-width: 500px;">#}
+{#          <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h4>#}
+{##}
+{#      </div>#}
+{#      <div class="row g-5">#}
+{#          <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <!-- <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-user-md text-white"></i>#}
+{#                  </div> -->#}
+{#                  <img src="{{url_for('static', filename='3.jpg')}}" class="card-img">#}
+{#                  <h4 class="mb-3">About Heart disease</h4>#}
+{#                  <h6 class="m-0">Learn about heart disease and its related conditions</h6>#}
+{#                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a> -->#}
+{#              </div>#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <!-- <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-procedures text-white"></i>#}
+{#                  </div> -->#}
+{##}
+{#                  <img src="{{url_for('static', filename='2.jpg')}}" class="card-img">#}
+{#                  <h4 class="mb-3">Know Your Risk for Heart disease</h4>#}
+{#                  <h6 class="m-0">Find out the chance of your heart disease</h6>#}
+{#                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a> -->#}
+{#              </div>#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <!-- <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-stethoscope text-white"></i>#}
+{#                  </div> -->#}
+{#                  <img src="{{url_for('static', filename='6.jpg')}}" class="card-img" >#}
+{#                  <h4 class="mb-3">Prevent Heart disease</h4>#}
+{#                  <h6 class="m-0">Learn what can you do to lower the risk of heart disease</h6>#}
+{#                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a> -->#}
+{#              </div>#}
+{#          </div>#}
+{#          <!-- <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-ambulance text-white"></i>#}
+{#                  </div>#}
+{#                  <h4 class="mb-3">Ambulance Service</h4>#}
+{#                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>#}
+{#                  <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a>#}
+{#              </div>#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-pills text-white"></i>#}
+{#                  </div>#}
+{#                  <h4 class="mb-3">Medicine & Pharmacy</h4>#}
+{#                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>#}
+{#                  <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a>#}
+{#              </div>#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6">#}
+{#              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">#}
+{#                  <div class="service-icon mb-4">#}
+{#                      <i class="fa fa-2x fa-microscope text-white"></i>#}
+{#                  </div>#}
+{#                  <h4 class="mb-3">Blood Testing</h4>#}
+{#                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>#}
+{#                  <a class="btn btn-lg btn-primary rounded-pill" href="">#}
+{#                      <i class="bi bi-arrow-right"></i>#}
+{#                  </a>#}
+{#              </div>#}
+{#          </div> -->#}
+{#      </div>#}
+{#  </div>#}
+{#</div>#}
 
-                  <img src="{{url_for('static', filename='2.jpg')}}" class="card-img">
-                  <h4 class="mb-3">Know Your Risk for Heart disease</h4>
-                  <h6 class="m-0">Find out the chance of your heart disease</h6>
-                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a> -->
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <!-- <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-stethoscope text-white"></i>
-                  </div> -->
-                  <img src="{{url_for('static', filename='6.jpg')}}" class="card-img" >
-                  <h4 class="mb-3">Prevent Heart disease</h4>
-                  <h6 class="m-0">Learn what can you do to lower the risk of heart disease</h6>
-                  <!-- <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a> -->
-              </div>
-          </div>
-          <!-- <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-ambulance text-white"></i>
-                  </div>
-                  <h4 class="mb-3">Ambulance Service</h4>
-                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                  <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a>
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-pills text-white"></i>
-                  </div>
-                  <h4 class="mb-3">Medicine & Pharmacy</h4>
-                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                  <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a>
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                  <div class="service-icon mb-4">
-                      <i class="fa fa-2x fa-microscope text-white"></i>
-                  </div>
-                  <h4 class="mb-3">Blood Testing</h4>
-                  <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                  <a class="btn btn-lg btn-primary rounded-pill" href="">
-                      <i class="bi bi-arrow-right"></i>
-                  </a>
-              </div>
-          </div> -->
-      </div>
-  </div>
+    <div class="container-fluid py-5 bg-light">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h4 class="text-primary text-uppercase border-bottom border-3 pb-2 d-inline-block">Our Services</h4>
+            <h2 class="mb-3">Your Heart Health Matters</h2>
+{#            <p class="text-muted"></p>#}
+        </div>
+
+        <!-- Services Cards -->
+        <div class="row g-5">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow-lg border-0">
+                    <img src="{{ url_for('static', filename='1.png') }}" class="card-img-top rounded-top" alt="About Heart Disease">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-primary text-white">User-Friendly Interface</h4>
+                        <p class="card-text text-muted">Intuitive and easy-to-use platform accessible to users of all technical backgrounds.Guides users step-by-step through data entry and results interpretation.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow-lg border-0">
+                    <img src="{{ url_for('static', filename='2.png') }}" class="card-img-top rounded-top" alt="Know Your Risk">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-primary text-white">Heart Disease Risk Prediction</h4>
+                        <p class="card-text text-muted">Predicts the likelihood of developing heart disease based on user-provided health parameters such as age, cholesterol levels, blood pressure, etc.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 ">
+                <div class="card shadow-lg border-0 pt-5 ">
+                    <img src="{{ url_for('static', filename='3.png') }}" class="card-img-top rounded-top pb-5" alt="Prevent Heart Disease" >
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-primary text-white">Personalized Health Tips</h4>
+                        <p class="card-text text-muted">Offers actionable suggestions to reduce the risk of heart disease, such as dietary adjustments, physical activity recommendations, and stress management techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <!-- Services End -->
 
  <!-- Appointment Start -->
@@ -272,27 +344,27 @@
   
 
 <!-- Search Start -->
-<div class="container-fluid bg-primary my-5 py-5">
-  <div class="container py-5">
-      <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-          <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>
-          <h1 class="display-4 mb-4">Find A Healthcare Professionals</h1>
-          <!-- <h5 class="text-white fw-normal">Duo ipsum erat stet dolor sea ut nonumy tempor. Tempor duo lorem eos sit sed ipsum takimata ipsum sit est. Ipsum ea voluptua ipsum sit justo</h5> -->
-      </div>
-      <div class="mx-auto" style="width: 100%; max-width: 600px;">
-          <div class="input-group">
-              <select class="form-select border-primary w-25" style="height: 60px;">
-                  <option selected>Department</option>
-                  <option value="1">Department 1</option>
-                  <option value="2">Department 2</option>
-                  <option value="3">Department 3</option>
-              </select>
-              <input type="text" class="form-control border-primary w-50" placeholder="Keyword">
-              <button class="btn btn-dark border-0 w-25">Search</button>
-          </div>
-      </div>
-  </div>
-</div>
+{#<div class="container-fluid bg-primary my-5 py-5">#}
+{#  <div class="container py-5">#}
+{#      <div class="text-center mx-auto mb-5" style="max-width: 500px;">#}
+{#          <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>#}
+{#          <h1 class="display-4 mb-4">Find A Healthcare Professionals</h1>#}
+{#          <!-- <h5 class="text-white fw-normal">Duo ipsum erat stet dolor sea ut nonumy tempor. Tempor duo lorem eos sit sed ipsum takimata ipsum sit est. Ipsum ea voluptua ipsum sit justo</h5> -->#}
+{#      </div>#}
+{#      <div class="mx-auto" style="width: 100%; max-width: 600px;">#}
+{#          <div class="input-group">#}
+{#              <select class="form-select border-primary w-25" style="height: 60px;">#}
+{#                  <option selected>Department</option>#}
+{#                  <option value="1">Department 1</option>#}
+{#                  <option value="2">Department 2</option>#}
+{#                  <option value="3">Department 3</option>#}
+{#              </select>#}
+{#              <input type="text" class="form-control border-primary w-50" placeholder="Keyword">#}
+{#              <button class="btn btn-dark border-0 w-25">Search</button>#}
+{#          </div>#}
+{#      </div>#}
+{#  </div>#}
+{#</div>#}
 <!-- Search End -->
 
 
@@ -370,7 +442,7 @@
 </div> -->
 <!-- Blog End -->
  <!-- Back to Top -->
- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{# <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>#}
 
 
  <!-- JavaScript Libraries -->

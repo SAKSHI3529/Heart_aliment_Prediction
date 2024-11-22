@@ -102,3 +102,19 @@
     
 })(jQuery);
 
+// // Automatically set the active class based on the current URL
+// document.addEventListener("DOMContentLoaded", () => {
+//     const navLinks = document.querySelectorAll(".nav-link");
+//     const currentPath = window.location.pathname;
+//
+//     navLinks.forEach(link => {
+//         // Remove 'active' from all links
+//         link.classList.remove("active");
+//
+//         // Add 'active' to the link that matches the current path
+//         if (link.getAttribute("href") === currentPath) {
+//             link.classList.add("active");
+//         }
+//     });
+// });
+
