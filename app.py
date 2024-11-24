@@ -9,11 +9,18 @@ from sklearn.tree import DecisionTreeClassifier
 
 from pyexpat import model
 
-load_dotenv() 
+load_dotenv()
 password_pred = os.getenv("passwor_pred")
 
 # model = pickle.load(open('heartweb.pkl', 'rb'))
+# Load the trained model and scaler
+model_filename = 'heart-disease-prediction-rf-model.pkl'
+scaler_filename = 'scaler.pkl'
+
+model = pickle.load(open(model_filename, 'rb'))
+scaler = pickle.load(open(scaler_filename, 'rb'))
 app = Flask(__name__)
+
 
 @app.route("/")
 def home():
@@ -34,69 +41,62 @@ def mancon():
 
 @app.route("/prediction", methods=['POST'] , endpoint='prediction')
 def prediction():
+    if request.method == 'POST':
+        # Get form values and convert to appropriate data types
+        name = request.form['name']# Keep name as a string
+        age = int(request.form['age'])
+        sex = int(request.form['sex'])  # Male = 1, Female = 0
+        cp = int(request.form['cp'])  # Chest Pain Type (0-3)
+        trestbps = int(request.form['trestbps'])
+        chol = int(request.form['chol'])
+        fbs = int(request.form['fbs'])  # 1 for Fasting blood sugar > 120, 0 otherwise
+        restecg = int(request.form['restecg'])  # Resting ECG (0-2)
+        thalach = int(request.form['thalach'])
+        exang = int(request.form['exang'])  # Exercise-induced Angina (1=Yes, 0=No)
+        oldpeak = float(request.form['oldpeak'])
+        slope = int(request.form['slope'])  # Slope of peak exercise ST segment (0-2)
+        ca = int(request.form['ca'])  # Number of major vessels (0-4)
+        thal = int(request.form['thal'])  # Thalassemia (0-2)
 
-    print(request.form)
-    data1 = request.form['a']
-    data2 = request.form['b']
-    data3 = request.form['c']
-    data4 = request.form['d']
-    data5 = request.form['e']
-    data6 = request.form['f']
-    data7 = request.form['g']
-    data8 = request.form['h']
-    data9 = request.form['i']
-    data10 = request.form['j']
-    data11 = request.form['k']
-    data12 = request.form['l']
-    data13 = request.form['m']
-    data14  =request.form['Name']
-  
-  
-    arr = np.array([[data14, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13]])
-    model = DecisionTreeClassifier()
-    joblib.dump(model, 'heartweb.pkl')
-    model = joblib.load('heartweb.pkl')
-    # predictions = model.predict(arr)
-    # print(predictions)
-    mongo = PyMongo()
-    app.config["MONGO_URI"] = "mongodb://localhost:27017/Heart-ailment"
-    mongo.init_app(app)
+        # Prepare the data for prediction
+        data = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
 
-    user = {
-        "Name": data14,
-        "Age": data1,
-        "sex": data2,
-        "chestpain" : data3,
-        "RestBP" : data4,
-        "chol" : data5,
-        "Fbs": data6,
-        "RestECG": data7,
-        "MaxHR" : data8,
-        "Exang": data9,
-        "Oldpeak" : data10,
-        "Slope": data11,
-        "ca":data12,
-        "thalach" : data13,
-    }
-    mongo.db.users.insert_one(user)
+        # Scale the data using the loaded scaler
+        data_scaled = scaler.transform(data)
 
-    # return redirect('/prediction')
-    # db[Name].insert_one({"Age":data1})
-    # db[Name].insert_one({"sex":data2})
-    # db[Name].insert_one({"chestpain":data3})
-    # db[Name].insert_one({"RestBP":data4})
-    # db[Name].insert_one({"Chol":data5})
-    # db[Name].insert_one({"Fbs":data6})
-    # db[Name].insert_one({"RestECG":data7})
-    # db[Name].insert_one({"MaxHR":data8})
-    # db[Name].insert_one({"Exang":data9})
-    # db[Name].insert_one({"Oldpeak":data10})
-    # db[Name].insert_one({"Slope":data11})
-    # db[Name].insert_one({"ca":data12})
-    # db[Name].insert_one({"thal":data13})
-    # result = prediction()  # Call the prediction function to get its result
-    # print(result)
-    return render_template('after.html', data=prediction)
+        # Make the prediction
+        prediction = model.predict(data_scaled)
+
+        print(prediction)
+        # Interpret the prediction result
+        # if prediction[0] == 1:
+        #     result = "Heart Disease"
+        # else:
+        #     result = "No Heart Disease"
+        mongo = PyMongo()
+        app.config["MONGO_URI"] = "mongodb://localhost:27017/Heart-ailment"
+        mongo.init_app(app)
+        user = {
+            "name": name,
+            "age": age,
+            "sex": sex,
+            "cp": cp,
+            "trestbps": trestbps,
+            "chol": chol,
+            "fbs": fbs,
+            "restecg": restecg,
+            "thalach": thalach,
+            "exang": exang,
+            "oldpeak": oldpeak,
+            "slope": slope,
+            "ca": ca,
+            "thal": thal,
+
+        }
+        mongo.db.users.insert_one(user)
+
+        # Render the result page with the prediction
+        return render_template('after.html', prediction=prediction)
 
 @app.route("/prevention")
 def prevention():
@@ -108,19 +108,25 @@ def about():
 
 @app.route("/contact", methods=['POST'])
 def contact():
+    # Retrieve data from the form
     contdata1 = request.form['nam']
     contdata2 = request.form['ema']
     contdata3 = request.form['mes']
+    contdata4 = request.form.get('sub', '')  # Subject is optional, provide a default empty string
 
-    app.config["MONGO_URI"] = "mongodb://localhost:27017/Heart-ailment/contact"
-    db = PyMongo(app).db
+    # Configure MongoDB connection
+    app.config["MONGO_URI"] = "mongodb://localhost:27017/Heart-ailment"
+    mongo = PyMongo(app)
 
-    db[contdata1].insert_one({"Name":contdata1})
-    db[contdata1].insert_one({"Email":contdata2})
-    db[contdata1].insert_one({"Message":contdata3})
+    # Insert the contact data into the 'contacts' collection
+    contact = {
+        "name": contdata1,
+        "email": contdata2,
+        "subject": contdata4,
+        "message": contdata3
+    }
+    mongo.db.contacts.insert_one(contact)
 
-    return render_template("contact.html")
-
-
+    return render_template("contact.html", success=True)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=2000)
